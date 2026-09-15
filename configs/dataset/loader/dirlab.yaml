@@ -1,0 +1,4 @@
+type: load_DIRLab
+folder: data/DIRLab
+offset: -0.5
+only_lung: true

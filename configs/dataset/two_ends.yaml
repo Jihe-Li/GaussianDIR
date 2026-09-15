@@ -1,0 +1,7 @@
+defaults:
+  - loader: dirlab
+
+type: RegDataset
+case_idx: 1
+batch_size: 20000
+neighs: 3

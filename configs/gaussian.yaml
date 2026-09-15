@@ -1,0 +1,37 @@
+defaults:
+  - _self_
+  - dataset: two_ends
+  - network: gaussian
+  - optimizer: adam
+  - loss: ncc
+  - regulizer: tv
+  - registrator: gaussian
+
+chunk_size: 50000
+log_freq: 500
+max_steps: 2000
+warmup_steps: 50
+resume: false
+seed: 6
+exp_name: GaussianDIR
+save_dir: outputs
+training: true
+use_wandb: false
+enable_densify: true
+densify_from_iter: 300
+densify_until_ratio: 0.6
+densify_interval_ratio: 0.05
+lr: 
+  node_position: 0.01
+  node_radius: 0.02
+  node_quaternion: 0.001
+  node_scaling: 0.02
+  translation: 0.002
+  quaternion: 0.001
+
+hydra:
+  run:
+    dir: outputs/${exp_name}/Case${dataset.case_idx}
+  job_logging:
+    root:
+      handlers: [file]  # the console is handled by logger.py
